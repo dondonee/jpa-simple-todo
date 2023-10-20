@@ -11,6 +11,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityNotFoundException;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
@@ -49,6 +52,21 @@ public class TaskTest {
 
         //then
         fail("예외가 발생해야 한다.");
+    }
+
+    @Test
+    public void 할일_삭제() throws Exception {
+        //given
+        Long taskId = taskService.add("task1", Priority.HIGH);
+
+        //when
+        taskService.deleteOne(taskId);
+        em.flush();
+        List<Task> findTasks = em.createQuery("select t from Task t", Task.class)
+                .getResultList();
+
+        //then
+        assertEquals(0, findTasks.size());
     }
 
 }

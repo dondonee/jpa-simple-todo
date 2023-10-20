@@ -27,6 +27,11 @@ public class TaskService {
         return taskRepository.findOne(id);
     }
 
+    @Transactional
+    public void deleteOne(Long id) {
+        taskRepository.deleteById(id);
+    }
+
     private void checkDuplicateTaskName(String name) {
         List<Task> findTasks = taskRepository.findByName(name);
 
