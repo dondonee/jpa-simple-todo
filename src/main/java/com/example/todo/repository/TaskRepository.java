@@ -1,5 +1,6 @@
 package com.example.todo.repository;
 
+import com.example.todo.domain.Status;
 import com.example.todo.domain.Task;
 import org.springframework.stereotype.Repository;
 
@@ -26,6 +27,11 @@ public class TaskRepository {
     public List<Task> findByName(String name) {
         return em.createQuery("select t from Task t where t.name = :name", Task.class)
                 .setParameter("name", name)
+                .getResultList();
+    }
+
+    public List<Task> findAllOrderedByRegDate() {
+        return em.createQuery("select t from Task t order by t.regDate desc", Task.class)
                 .getResultList();
     }
 

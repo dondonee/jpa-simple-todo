@@ -29,6 +29,10 @@ public class TaskService {
         return taskRepository.findOne(id);
     }
 
+    public List<Task> findTasks() {
+        return taskRepository.findAllOrderedByRegDate();
+    }
+
     @Transactional
     public void deleteOne(Long id) {
         taskRepository.deleteById(id);

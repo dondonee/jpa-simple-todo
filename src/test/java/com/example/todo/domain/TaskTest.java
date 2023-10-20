@@ -104,4 +104,21 @@ public class TaskTest {
         assertEquals(Status.TODO, findTask.getStatus());
     }
 
+    @Test
+    public void 할일_시간_내림차순_조회() throws Exception {
+        //given
+        Long taskId1 = taskService.add("task1", Priority.HIGH);
+        Long taskId2 = taskService.add("task2", Priority.HIGH);
+
+        //when
+        List<Task> tasks = taskService.findTasks();
+
+        Task task1 = taskService.findOne(taskId1);
+        Task task2 = taskService.findOne(taskId2);
+
+        //then
+        assertEquals(task2, tasks.get(0));
+        assertEquals(task1, tasks.get(1));
+    }
+
 }
