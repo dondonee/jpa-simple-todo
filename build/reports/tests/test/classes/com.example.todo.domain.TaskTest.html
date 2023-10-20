@@ -78,7 +78,7 @@
 </tr>
 </thead>
 <tr>
-<td class="success">할일_삭제</td>
+<td class="success">할일_수정</td>
 <td class="success">0.163s</td>
 <td class="success">passed</td>
 </tr>
@@ -87,13 +87,13 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>15:38:34.939 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.todo.domain.TaskTest]
-15:38:34.939 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.todo.domain.TaskTest]
-15:38:34.940 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.todo.domain.TaskTest]
-15:38:34.940 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.todo.domain.TaskTest]
-15:38:34.942 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@2f6bbeb0 testClass = TaskTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1b1637e1 testClass = TaskTest, locations = '{}', classes = '{class com.example.todo.TodoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52d239ba, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1a45193b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6c25e6c4, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@70efb718, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6475472c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@44b3606b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
-15:38:34.942 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.todo.domain.TaskTest]
-15:38:34.942 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.todo.domain.TaskTest]
+<pre>17:15:45.873 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.todo.domain.TaskTest]
+17:15:45.873 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.todo.domain.TaskTest]
+17:15:45.874 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.todo.domain.TaskTest]
+17:15:45.874 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.todo.domain.TaskTest]
+17:15:45.875 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@18151a14 testClass = TaskTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@64711bf2 testClass = TaskTest, locations = '{}', classes = '{class com.example.todo.TodoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@68fa0ba8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5286c33a, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@c5ee75e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4a11eb84, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4bd1f8dd, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@663411de], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true]], class annotated with @DirtiesContext [false] with mode [null].
+17:15:45.876 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.example.todo.domain.TaskTest]
+17:15:45.876 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.example.todo.domain.TaskTest]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -103,20 +103,20 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.16)
 
-2023-10-20 15:38:35.105  INFO 43095 --- [    Test worker] com.example.todo.domain.TaskTest         : Starting TaskTest using Java 11.0.20.1 on myMac with PID 43095 (started by hwangdoyun in /Users/hwangdoyun/MainFolder/study/todo)
-2023-10-20 15:38:35.105  INFO 43095 --- [    Test worker] com.example.todo.domain.TaskTest         : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-10-20 15:38:35.364  INFO 43095 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-20 15:38:35.370  INFO 43095 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
-2023-10-20 15:38:35.666  INFO 43095 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-20 15:38:35.694  INFO 43095 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-10-20 15:38:35.768  INFO 43095 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-10-20 15:38:35.810  INFO 43095 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-10-20 15:38:35.898  INFO 43095 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-10-20 15:38:35.914  INFO 43095 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-10-20 17:15:46.032  INFO 46196 --- [    Test worker] com.example.todo.domain.TaskTest         : Starting TaskTest using Java 11.0.20.1 on myMac with PID 46196 (started by hwangdoyun in /Users/hwangdoyun/MainFolder/study/todo)
+2023-10-20 17:15:46.032  INFO 46196 --- [    Test worker] com.example.todo.domain.TaskTest         : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-10-20 17:15:46.288  INFO 46196 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20 17:15:46.295  INFO 46196 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2023-10-20 17:15:46.594  INFO 46196 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20 17:15:46.619  INFO 46196 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-10-20 17:15:46.698  INFO 46196 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-10-20 17:15:46.741  INFO 46196 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-10-20 17:15:46.829  INFO 46196 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-10-20 17:15:46.844  INFO 46196 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 Hibernate: 
     
     drop table if exists task CASCADE 
-2023-10-20 15:38:36.164  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916164 | took 0ms | statement | connection 1| url jdbc:h2:mem:test
+2023-10-20 17:15:47.089  INFO 46196 --- [    Test worker] p6spy                                    : #1697789747089 | took 0ms | statement | connection 1| url jdbc:h2:mem:test
 
     drop table if exists task CASCADE 
 
@@ -124,13 +124,13 @@ Hibernate:
 Hibernate: 
     
     drop sequence if exists hibernate_sequence
-2023-10-20 15:38:36.164  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916164 | took 0ms | statement | connection 1| url jdbc:h2:mem:test
+2023-10-20 17:15:47.090  INFO 46196 --- [    Test worker] p6spy                                    : #1697789747090 | took 0ms | statement | connection 1| url jdbc:h2:mem:test
 
     drop sequence if exists hibernate_sequence
 
     drop sequence if exists hibernate_sequence;
 Hibernate: create sequence hibernate_sequence start with 1 increment by 1
-2023-10-20 15:38:36.166  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916166 | took 0ms | statement | connection 2| url jdbc:h2:mem:test
+2023-10-20 17:15:47.092  INFO 46196 --- [    Test worker] p6spy                                    : #1697789747092 | took 0ms | statement | connection 2| url jdbc:h2:mem:test
 create sequence hibernate_sequence start with 1 increment by 1
 create sequence hibernate_sequence start with 1 increment by 1;
 Hibernate: 
@@ -143,7 +143,7 @@ Hibernate:
         status varchar(255),
         primary key (task_id)
     )
-2023-10-20 15:38:36.170  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916170 | took 2ms | statement | connection 2| url jdbc:h2:mem:test
+2023-10-20 17:15:47.095  INFO 46196 --- [    Test worker] p6spy                                    : #1697789747095 | took 1ms | statement | connection 2| url jdbc:h2:mem:test
 
     create table task (
        task_id bigint not null,
@@ -166,18 +166,18 @@ Hibernate:
     
     alter table task 
        add constraint UK_lerptdo9d67pejjpbfau899tm unique (name)
-2023-10-20 15:38:36.171  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916171 | took 0ms | statement | connection 2| url jdbc:h2:mem:test
+2023-10-20 17:15:47.096  INFO 46196 --- [    Test worker] p6spy                                    : #1697789747096 | took 0ms | statement | connection 2| url jdbc:h2:mem:test
 
     alter table task 
        add constraint UK_lerptdo9d67pejjpbfau899tm unique (name)
 
     alter table task 
        add constraint UK_lerptdo9d67pejjpbfau899tm unique (name);
-2023-10-20 15:38:36.172  INFO 43095 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-20 15:38:36.176  INFO 43095 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-20 15:38:36.285  WARN 43095 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-20 15:38:36.510  INFO 43095 --- [    Test worker] com.example.todo.domain.TaskTest         : Started TaskTest in 1.554 seconds (JVM running for 2.061)
-2023-10-20 15:38:36.557  INFO 43095 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@2f6bbeb0 testClass = TaskTest, testInstance = com.example.todo.domain.TaskTest@22a1d77b, testMethod = 할일_삭제@TaskTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1b1637e1 testClass = TaskTest, locations = '{}', classes = '{class com.example.todo.TodoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52d239ba, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1a45193b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6c25e6c4, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@70efb718, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6475472c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@44b3606b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@7f839ec5]; rollback [true]
+2023-10-20 17:15:47.096  INFO 46196 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20 17:15:47.101  INFO 46196 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20 17:15:47.212  WARN 46196 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20 17:15:47.454  INFO 46196 --- [    Test worker] com.example.todo.domain.TaskTest         : Started TaskTest in 1.564 seconds (JVM running for 2.077)
+2023-10-20 17:15:47.503  INFO 46196 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@18151a14 testClass = TaskTest, testInstance = com.example.todo.domain.TaskTest@80b6098, testMethod = 할일_수정@TaskTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@64711bf2 testClass = TaskTest, locations = '{}', classes = '{class com.example.todo.TodoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@68fa0ba8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5286c33a, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@c5ee75e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4a11eb84, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4bd1f8dd, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@663411de], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]; transaction manager [org.springframework.orm.jpa.JpaTransactionManager@46146832]; rollback [true]
 Hibernate: 
     select
         task0_.task_id as task_id1_0_,
@@ -189,49 +189,18 @@ Hibernate:
         task task0_ 
     where
         task0_.name=?
-2023-10-20 15:38:36.660  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916660 | took 4ms | statement | connection 3| url jdbc:h2:mem:test
+2023-10-20 17:15:47.614  INFO 46196 --- [    Test worker] p6spy                                    : #1697789747614 | took 4ms | statement | connection 3| url jdbc:h2:mem:test
 select task0_.task_id as task_id1_0_, task0_.name as name2_0_, task0_.priority as priority3_0_, task0_.reg_date as reg_date4_0_, task0_.status as status5_0_ from task task0_ where task0_.name=?
-select task0_.task_id as task_id1_0_, task0_.name as name2_0_, task0_.priority as priority3_0_, task0_.reg_date as reg_date4_0_, task0_.status as status5_0_ from task task0_ where task0_.name='task1';
+select task0_.task_id as task_id1_0_, task0_.name as name2_0_, task0_.priority as priority3_0_, task0_.reg_date as reg_date4_0_, task0_.status as status5_0_ from task task0_ where task0_.name='task';
 Hibernate: 
     call next value for hibernate_sequence
-2023-10-20 15:38:36.669  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916669 | took 0ms | statement | connection 3| url jdbc:h2:mem:test
+2023-10-20 17:15:47.621  INFO 46196 --- [    Test worker] p6spy                                    : #1697789747621 | took 0ms | statement | connection 3| url jdbc:h2:mem:test
 call next value for hibernate_sequence
 call next value for hibernate_sequence;
-Hibernate: 
-    insert 
-    into
-        task
-        (name, priority, reg_date, status, task_id) 
-    values
-        (?, ?, ?, ?, ?)
-2023-10-20 15:38:36.682  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916682 | took 0ms | statement | connection 3| url jdbc:h2:mem:test
-insert into task (name, priority, reg_date, status, task_id) values (?, ?, ?, ?, ?)
-insert into task (name, priority, reg_date, status, task_id) values ('task1', 'HIGH', '2023-10-20T15:38:36.666+0900', 'TODO', 1);
-Hibernate: 
-    delete 
-    from
-        task 
-    where
-        task_id=?
-2023-10-20 15:38:36.683  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916683 | took 0ms | statement | connection 3| url jdbc:h2:mem:test
-delete from task where task_id=?
-delete from task where task_id=1;
-Hibernate: 
-    select
-        task0_.task_id as task_id1_0_,
-        task0_.name as name2_0_,
-        task0_.priority as priority3_0_,
-        task0_.reg_date as reg_date4_0_,
-        task0_.status as status5_0_ 
-    from
-        task task0_
-2023-10-20 15:38:36.686  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916686 | took 0ms | statement | connection 3| url jdbc:h2:mem:test
-select task0_.task_id as task_id1_0_, task0_.name as name2_0_, task0_.priority as priority3_0_, task0_.reg_date as reg_date4_0_, task0_.status as status5_0_ from task task0_
-select task0_.task_id as task_id1_0_, task0_.name as name2_0_, task0_.priority as priority3_0_, task0_.reg_date as reg_date4_0_, task0_.status as status5_0_ from task task0_;
-2023-10-20 15:38:36.688  INFO 43095 --- [    Test worker] p6spy                                    : #1697783916688 | took 0ms | rollback | connection 3| url jdbc:h2:mem:test
+2023-10-20 17:15:47.632  INFO 46196 --- [    Test worker] p6spy                                    : #1697789747632 | took 0ms | rollback | connection 3| url jdbc:h2:mem:test
 
 ;
-2023-10-20 15:38:36.689  INFO 43095 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@2f6bbeb0 testClass = TaskTest, testInstance = com.example.todo.domain.TaskTest@22a1d77b, testMethod = 할일_삭제@TaskTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@1b1637e1 testClass = TaskTest, locations = '{}', classes = '{class com.example.todo.TodoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@52d239ba, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1a45193b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6c25e6c4, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@70efb718, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@6475472c, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@44b3606b], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]
+2023-10-20 17:15:47.633  INFO 46196 --- [    Test worker] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test: [DefaultTestContext@18151a14 testClass = TaskTest, testInstance = com.example.todo.domain.TaskTest@80b6098, testMethod = 할일_수정@TaskTest, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@64711bf2 testClass = TaskTest, locations = '{}', classes = '{class com.example.todo.TodoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@68fa0ba8, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5286c33a, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@c5ee75e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4a11eb84, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4bd1f8dd, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@663411de], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.populatedRequestContextHolder' -&gt; true, 'org.springframework.test.context.web.ServletTestExecutionListener.resetRequestContextHolder' -&gt; true, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -&gt; false]]
 </pre>
 </span>
 </div>
@@ -243,7 +212,7 @@ select task0_.task_id as task_id1_0_, task0_.name as name2_0_, task0_.priority a
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.3</a> at Oct 20, 2023, 3:38:36 PM</p>
+<a href="http://www.gradle.org">Gradle 8.3</a> at Oct 20, 2023, 5:15:47 PM</p>
 </div>
 </div>
 </body>

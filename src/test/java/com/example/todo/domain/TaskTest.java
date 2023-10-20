@@ -1,5 +1,6 @@
 package com.example.todo.domain;
 
+import ch.qos.logback.core.encoder.EchoEncoder;
 import com.example.todo.repository.TaskRepository;
 import com.example.todo.service.TaskService;
 import org.junit.Test;
@@ -67,6 +68,40 @@ public class TaskTest {
 
         //then
         assertEquals(0, findTasks.size());
+    }
+
+    @Test
+    public void 할일_상태_업데이트() throws Exception {
+        //given
+        Long taskId1 = taskService.add("task1", Priority.HIGH);
+        Long taskId2 = taskService.add("task2", Priority.HIGH);
+
+        //when
+        taskService.updateTaskStatus(taskId1);  //task1: TODO -> DOING
+        taskService.updateTaskStatus(taskId2);  //task2: TODO -> DOING -> DONE
+        taskService.updateTaskStatus(taskId2);
+
+        Task task1 = taskService.findOne(taskId1);
+        Task task2 = taskService.findOne(taskId2);
+
+        //then
+        assertEquals(task1.getStatus(), Status.DOING);
+        assertEquals(task2.getStatus(), Status.DONE);
+    }
+
+    @Test
+    public void 할일_수정() throws Exception {
+        //given
+        Long taskId = taskService.add("task", Priority.HIGH);
+
+        //when
+        taskService.editTask(taskId, "editTask", Priority.LOW);
+        Task findTask = taskService.findOne(taskId);
+
+        //then
+        assertEquals("editTask", findTask.getName());
+        assertEquals(Priority.LOW, findTask.getPriority());
+        assertEquals(Status.TODO, findTask.getStatus());
     }
 
 }
