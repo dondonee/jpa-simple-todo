@@ -10,9 +10,9 @@
         <h1 class="header__title--main">
             Todo List
         </h1>
-        <button class="header__button btn" onclick="location.href='TodoFormServlet'" type="button">
+        <a class="header__button btn" href="/tasks/new">
             새로운 TODO 등록
-        </button>
+        </a>
     </header>
     <section class="section">
         <article class="section__list">
@@ -27,7 +27,7 @@
                         우선순위 : <span th:text="${task.priority}"></span>
                     </p>
                     <button th:id="${task.id}" class="item__button" type="button">
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-arrow-right">&rightarrow;️️</i>
                     </button>
                 </li>
             </ul>
@@ -44,7 +44,7 @@
                         우선순위 : <span th:text="${task.priority}"></span>
                     </p>
                     <button th:id="${task.id}" class="item__button" type="button">
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-arrow-right">&rightarrow;</i>
                     </button>
                 </li>
             </ul>
@@ -61,7 +61,7 @@
                         우선순위 : <span th:text="${task.priority}"></span>
                     </p>
                     <button th:id="${task.id}" class="item__button" type="button">
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i class="fa-solid fa-arrow-right">X</i>
                     </button>
                 </li>
             </ul>

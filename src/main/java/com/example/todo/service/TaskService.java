@@ -30,7 +30,7 @@ public class TaskService {
         return taskRepository.findOne(id);
     }
 
-    public List<Task> findTasksByStats(Status status) {
+    public List<Task> findTasksByStatus(Status status) {
         List<Task> findTasks = taskRepository.findAllOrderedByRegDate();
         List<Task> result = new ArrayList<>();
 
