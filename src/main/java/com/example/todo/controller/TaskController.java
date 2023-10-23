@@ -97,4 +97,19 @@ public class TaskController {
         taskService.editTask(taskId, form.getName(), form.getPriority());
         return "redirect:/tasks";
     }
+
+    @GetMapping("/tasks/{taskId}/delete")
+    public String deleteTask(@PathVariable Long taskId) {
+
+        taskService.deleteOne(taskId);
+        return "redirect:/tasks";
+    }
+
+    @GetMapping("/tasks/{taskId}/update")
+    public String updateTask(@PathVariable Long taskId) {
+
+        taskService.updateTaskStatus(taskId);
+        return "redirect:/tasks";
+    }
+
 }

@@ -29,9 +29,9 @@
                     <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
                         Edit
                     </a>
-                    <button th:id="${task.id}" class="item__button" type="button">
-                        <i class="fa-solid fa-arrow-right">&rightarrow;️️</i>
-                    </button>
+                    <a th:href="@{/tasks/{id}/update (id=${task.id})}" role="button">
+                        &rightarrow;
+                    </a>
                 </li>
             </ul>
         </article>
@@ -46,9 +46,12 @@
                         등록날짜 : <span th:text="${task.regDate}"></span>,
                         우선순위 : <span th:text="${task.priority}"></span>
                     </p>
-                    <button th:id="${task.id}" class="item__button" type="button">
-                        <i class="fa-solid fa-arrow-right">&rightarrow;</i>
-                    </button>
+                    <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
+                        Edit
+                    </a>
+                    <a th:href="@{/tasks/{id}/update (id=${task.id})}" role="button">
+                        &rightarrow;
+                    </a>
                 </li>
             </ul>
         </article>
@@ -63,9 +66,12 @@
                         등록날짜 : <span th:text="${task.regDate}"></span>,
                         우선순위 : <span th:text="${task.priority}"></span>
                     </p>
-                    <button th:id="${task.id}" class="item__button" type="button">
-                        <i class="fa-solid fa-arrow-right">X</i>
-                    </button>
+                    <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
+                        Edit
+                    </a>
+                    <a th:href="@{/tasks/{id}/delete (id=${task.id})}" role="button">
+                        X
+                    </a>
                 </li>
             </ul>
         </article>
