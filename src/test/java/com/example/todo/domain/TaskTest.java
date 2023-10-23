@@ -111,7 +111,7 @@ public class TaskTest {
         Long taskId2 = taskService.add("task2", Priority.HIGH);
 
         //when
-        List<Task> tasks = taskService.findTasks();
+        List<Task> tasks = taskService.findTasksByStatus(Status.TODO);
 
         Task task1 = taskService.findOne(taskId1);
         Task task2 = taskService.findOne(taskId2);

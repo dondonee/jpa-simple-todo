@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -29,8 +30,17 @@ public class TaskService {
         return taskRepository.findOne(id);
     }
 
-    public List<Task> findTasks() {
-        return taskRepository.findAllOrderedByRegDate();
+    public List<Task> findTasksByStatus(Status status) {
+        List<Task> findTasks = taskRepository.findAllOrderedByRegDate();
+        List<Task> result = new ArrayList<>();
+
+        for (Task task : findTasks) {
+            if (task.getStatus() == status) {
+                result.add(task);
+            }
+        }
+
+        return result;
     }
 
     @Transactional

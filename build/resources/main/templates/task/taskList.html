@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" lang="ko">
+    <title>TODO</title>
+</head>
+<body>
+<div class="wrap">
+    <header class="header">
+        <h1 class="header__title--main">
+            Todo List
+        </h1>
+        <a class="header__button btn" href="/tasks/new">
+            새로운 TODO 등록
+        </a>
+    </header>
+    <section class="section">
+        <article class="section__list">
+            <h2 class="list__title">
+                TODO
+            </h2>
+            <ul id="TODO" class="list__items">
+                <li th:each="task : ${todos}" class="list__item">
+                    <h3 class="item__title" th:text="${task.name}"></h3>
+                    <p class="item__caption">
+                        등록날짜 : <span th:text="${task.regDate}"></span>,
+                        우선순위 : <span th:text="${task.priority}"></span>
+                    </p>
+                    <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
+                        [ Edit ]
+                    </a>
+                    <a th:href="@{/tasks/{id}/update (id=${task.id})}" role="button">
+                        [ &rightarrow; ]
+                    </a>
+                </li>
+            </ul>
+        </article>
+        <article class="section__list">
+            <h2 class="list__title">
+                DOING
+            </h2>
+            <ul id="DOING" class="list__items">
+                <li th:each="task : ${doings}" class="list__item">
+                    <h3 class="item__title" th:text="${task.name}"></h3>
+                    <p class="item__caption">
+                        등록날짜 : <span th:text="${task.regDate}"></span>,
+                        우선순위 : <span th:text="${task.priority}"></span>
+                    </p>
+                    <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
+                        [ Edit ]
+                    </a>
+                    <a th:href="@{/tasks/{id}/update (id=${task.id})}" role="button">
+                        [ &rightarrow; ]
+                    </a>
+                </li>
+            </ul>
+        </article>
+        <article class="section__list">
+            <h2 class="list__title">
+                DONE
+            </h2>
+            <ul id="DONE" class="list__items">
+                <li th:each="task : ${dones}" class="list__item">
+                    <h3 class="item__title" th:text="${task.name}"></h3>
+                    <p class="item__caption">
+                        등록날짜 : <span th:text="${task.regDate}"></span>,
+                        우선순위 : <span th:text="${task.priority}"></span>
+                    </p>
+                    <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
+                        [ Edit ]
+                    </a>
+                    <a th:href="@{/tasks/{id}/delete (id=${task.id})}" role="button">
+                        [ X ]
+                    </a>
+                </li>
+            </ul>
+        </article>
+
+    </section>
+</div>
+</body>
+<script>
+    function edit(id) {
+        var form = document.createElement("form");
+        form.setAttribute("method", "post");
+        form.setAttribute("action", "/tasks/" + id + "/edit");
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
+</html>
