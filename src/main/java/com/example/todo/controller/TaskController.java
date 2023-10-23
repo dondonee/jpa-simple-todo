@@ -8,15 +8,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.naming.Binding;
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -75,5 +71,30 @@ public class TaskController {
         taskService.add(form.getName(), form.getPriority());
         return "redirect:/tasks";
 
+    }
+
+    @GetMapping("/tasks/{taskId}/edit")
+    public String editTaskForm(@PathVariable Long taskId, Model model) {
+
+        Task task = taskService.findOne(taskId);
+
+        TaskForm form = new TaskForm();
+        form.setName(task.getName());
+        form.setPriority(task.getPriority());
+
+        model.addAttribute("form", form);
+        return "task/editTaskForm";
+    }
+
+    @PostMapping("/tasks/{taskId}/edit")
+    public String editTask(@PathVariable Long taskId, @Valid TaskForm form,
+                           BindingResult result) {
+
+        if (result.hasErrors()) {
+            return "redirect:/tasks/{taskId}/edit";
+        }
+
+        taskService.editTask(taskId, form.getName(), form.getPriority());
+        return "redirect:/tasks";
     }
 }
