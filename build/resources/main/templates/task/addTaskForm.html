@@ -14,7 +14,7 @@
 
     <section class="section section--form">
         <form class="section__form" action="/tasks/new" th:object="${taskForm}" method="post">
-            <label th:for="name">제목</label>
+            <p><label th:for="name">제목</label></p>
             <input type="text" th:field="*{name}" class="form__inputBox" placeholder="Java 공부하기(24자까지)">
             <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect data</p>
             <p class="form__text">우선순위</p>
@@ -33,15 +33,17 @@
                                 <label class="option__label" for="low">낮음</label>
                             </span>
             <p th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">Incorrect data</p>
-            <button class="buttons__button buttons__button--apply btn btn--short" type="submit">
-                제출
-            </button>
-            <button class="buttons__button buttons__button--apply btn btn--short" type="reset">
-                내용지우기
-            </button>
-            <a class="buttons__button buttons__button--cancel btn btn--short"
-               href="/tasks">&leftarrow; 이전
-            </a>
+            <div>
+                <button class="buttons__button buttons__button--apply btn btn--short" type="submit">
+                    제출
+                </button>
+                <button class="buttons__button buttons__button--apply btn btn--short" type="reset">
+                    내용지우기
+                </button>
+                <a class="buttons__button buttons__button--cancel btn btn--short"
+                   href="/tasks"> [ &leftarrow; 이전 ]
+                </a>
+            </div>
         </form>
     </section>
 

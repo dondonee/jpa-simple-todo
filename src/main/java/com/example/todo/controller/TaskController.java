@@ -21,24 +21,6 @@ public class TaskController {
 
     private final TaskService taskService;
 
-    /**
-     * 테스트 데이터 삽입용 - 추후 삭제 요망
-     */
-    @GetMapping("/")
-    public String setUp() {
-
-        Long taskId1 = taskService.add("task1", Priority.HIGH);
-        taskService.add("task2", Priority.MEDIUM);
-        taskService.add("task3", Priority.LOW);
-        Long taskId4 = taskService.add("task4", Priority.HIGH);
-
-        taskService.updateTaskStatus(taskId1);
-        taskService.updateTaskStatus(taskId4);
-        taskService.updateTaskStatus(taskId4);
-
-        return "redirect:/tasks";
-    }
-
     @GetMapping("/tasks")
     public String taskList(Model model) {
 
