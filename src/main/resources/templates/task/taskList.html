@@ -5,24 +5,24 @@
     <title>TODO</title>
 </head>
 <body>
-<div class="wrap">
-    <header class="header">
-        <h1 class="header__title--main">
+<div>
+    <header>
+        <h1>
             Todo List
         </h1>
-        <a class="header__button btn" href="/tasks/new">
+        <a href="/tasks/new">
             새로운 TODO 등록
         </a>
     </header>
-    <section class="section">
-        <article class="section__list">
-            <h2 class="list__title">
+    <section>
+        <article>
+            <h2>
                 TODO
             </h2>
-            <ul id="TODO" class="list__items">
-                <li th:each="task : ${todos}" class="list__item">
-                    <h3 class="item__title" th:text="${task.name}"></h3>
-                    <p class="item__caption">
+            <ul>
+                <li th:each="task : ${todos}">
+                    <h3 th:text="${task.name}"></h3>
+                    <p>
                         등록날짜 : <span th:text="${task.regDate}"></span>,
                         우선순위 : <span th:text="${task.priority}"></span>
                     </p>
@@ -35,14 +35,14 @@
                 </li>
             </ul>
         </article>
-        <article class="section__list">
-            <h2 class="list__title">
+        <article>
+            <h2>
                 DOING
             </h2>
-            <ul id="DOING" class="list__items">
-                <li th:each="task : ${doings}" class="list__item">
-                    <h3 class="item__title" th:text="${task.name}"></h3>
-                    <p class="item__caption">
+            <ul>
+                <li th:each="task : ${doings}">
+                    <h3 th:text="${task.name}"></h3>
+                    <p>
                         등록날짜 : <span th:text="${task.regDate}"></span>,
                         우선순위 : <span th:text="${task.priority}"></span>
                     </p>
@@ -55,14 +55,14 @@
                 </li>
             </ul>
         </article>
-        <article class="section__list">
-            <h2 class="list__title">
+        <article>
+            <h2>
                 DONE
             </h2>
-            <ul id="DONE" class="list__items">
-                <li th:each="task : ${dones}" class="list__item">
-                    <h3 class="item__title" th:text="${task.name}"></h3>
-                    <p class="item__caption">
+            <ul>
+                <li th:each="task : ${dones}">
+                    <h3 th:text="${task.name}"></h3>
+                    <p>
                         등록날짜 : <span th:text="${task.regDate}"></span>,
                         우선순위 : <span th:text="${task.priority}"></span>
                     </p>
@@ -79,13 +79,4 @@
     </section>
 </div>
 </body>
-<script>
-    function edit(id) {
-        var form = document.createElement("form");
-        form.setAttribute("method", "post");
-        form.setAttribute("action", "/tasks/" + id + "/edit");
-        document.body.appendChild(form);
-        form.submit();
-    }
-</script>
 </html>

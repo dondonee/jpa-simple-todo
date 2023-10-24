@@ -64,7 +64,7 @@ public class TaskController {
         form.setName(task.getName());
         form.setPriority(task.getPriority());
 
-        model.addAttribute("form", form);
+        model.addAttribute("taskForm", form);
         return "task/editTaskForm";
     }
 
@@ -73,7 +73,11 @@ public class TaskController {
                            BindingResult result) {
 
         if (result.hasErrors()) {
-            return "redirect:/tasks/{taskId}/edit";
+            Task findTask = taskService.findOne(taskId);
+            form.setName(findTask.getName());
+            form.setPriority(findTask.getPriority());
+
+            return "task/editTaskForm";
         }
 
         taskService.editTask(taskId, form.getName(), form.getPriority());
