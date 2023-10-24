@@ -4,44 +4,44 @@
     <meta charset="UTF-8" lang="ko">
     <title>TODO</title>
 </head>
-<body class="body--form">
-<div id="wrap" class="wrap--form">
-    <header class="header header--form">
-        <h1 class="header__title">
+<body>
+<div>
+    <header>
+        <h1>
             할 일 등록
         </h1>
     </header>
 
-    <section class="section section--form">
-        <form class="section__form" action="/tasks/new" th:object="${taskForm}" method="post">
+    <section>
+        <form action="/tasks/new" th:object="${taskForm}" method="post">
             <p><label th:for="name">제목</label></p>
-            <input type="text" th:field="*{name}" class="form__inputBox" placeholder="Java 공부하기(24자까지)">
+            <input type="text" th:field="*{name}" placeholder="Java 공부하기(24자까지)">
             <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect data</p>
-            <p class="form__text">우선순위</p>
-            <span class="form__option">
-                                <input class="option__button" type="radio" th:field="*{priority}" value="HIGH"
+            <p>우선순위</p>
+            <span>
+                                <input type="radio" th:field="*{priority}" value="HIGH"
                                        id="high">
-                                <label class="option__label" for="high">높음</label>
+                                <label for="high">높음</label>
                             </span>
-            <span class="form__option">
-                                <input class="option__button" type="radio" th:field="*{priority}" value="MEDIUM"
+            <span>
+                                <input type="radio" th:field="*{priority}" value="MEDIUM"
                                        id="medium">
-                                <label class="option__label" for="medium">보통</label>
+                                <label for="medium">보통</label>
                             </span>
-            <span class="form__option">
-                                <input class="option__button" type="radio" th:field="*{priority}" value="LOW" id="low">
-                                <label class="option__label" for="low">낮음</label>
+            <span>
+                                <input type="radio" th:field="*{priority}" value="LOW" id="low">
+                                <label for="low">낮음</label>
                             </span>
             <p th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">Incorrect data</p>
             <div>
-                <button class="buttons__button buttons__button--apply btn btn--short" type="submit">
+                <button type="submit">
                     제출
                 </button>
-                <button class="buttons__button buttons__button--apply btn btn--short" type="reset">
+                <button type="reset">
                     내용지우기
                 </button>
-                <a class="buttons__button buttons__button--cancel btn btn--short"
-                   href="/tasks"> [ &leftarrow; 이전 ]
+                <a href="/tasks">
+                    [ &leftarrow; 이전 ]
                 </a>
             </div>
         </form>
