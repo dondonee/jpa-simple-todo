@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" lang="ko">
-    <title>TODO</title>
-</head>
+<head th:replace="fragments/header :: header"/>
 <body>
 <div>
     <header>
@@ -23,8 +20,8 @@
                 <li th:each="task : ${todos}">
                     <h3 th:text="${task.name}"></h3>
                     <p>
-                        등록날짜 : <span th:text="${task.regDate}"></span>,
-                        우선순위 : <span th:text="${task.priority}"></span>
+                        등록날짜 : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
+                        우선순위 : <span th:text="${task.priority.getDescription()}"></span>
                     </p>
                     <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
                         [ Edit ]
@@ -43,8 +40,8 @@
                 <li th:each="task : ${doings}">
                     <h3 th:text="${task.name}"></h3>
                     <p>
-                        등록날짜 : <span th:text="${task.regDate}"></span>,
-                        우선순위 : <span th:text="${task.priority}"></span>
+                        등록날짜 : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
+                        우선순위 : <span th:text="${task.priority.getDescription()}"></span>
                     </p>
                     <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
                         [ Edit ]
@@ -63,8 +60,8 @@
                 <li th:each="task : ${dones}">
                     <h3 th:text="${task.name}"></h3>
                     <p>
-                        등록날짜 : <span th:text="${task.regDate}"></span>,
-                        우선순위 : <span th:text="${task.priority}"></span>
+                        등록날짜 : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
+                        우선순위 : <span th:text="${task.priority.getDescription()}"></span>
                     </p>
                     <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
                         [ Edit ]

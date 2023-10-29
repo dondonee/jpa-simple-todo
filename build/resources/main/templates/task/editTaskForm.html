@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8" lang="ko">
-    <title>TODO</title>
-</head>
+<head th:replace="fragments/header :: header"/>
 <body>
 <div>
     <header>
@@ -18,21 +15,10 @@
             <input type="text" th:field="*{name}" th:placeholder="${taskForm.name}">
             <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect data</p>
             <p>우선순위</p>
-            <span>
-                                <input type="radio" th:field="*{priority}" value="HIGH"
-                                       id="high" th:checked="${taskForm.priority == 'HIGH'}">
-                                <label for="high">높음</label>
-                            </span>
-            <span>
-                                <input type="radio" th:field="*{priority}" value="MEDIUM"
-                                       id="medium" th:checked="${taskForm.priority == 'MEDIUM'}">
-                                <label for="medium">보통</label>
-                            </span>
-            <span>
-                                <input type="radio" th:field="*{priority}" value="LOW"
-                                       id="low" th:checked="${taskForm.priority == 'LOW'}">
-                                <label for="low">낮음</label>
-                            </span>
+            <th:block th:each="pr : ${priorities}">
+                <input type="radio" th:field="*{priority}" th:value="${pr.name()}">
+                <label th:for="${#ids.prev('priority')}" th:text="${pr.getDescription()}"></label>
+            </th:block>
             <p th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">Incorrect data</p>
             <div>
                 <button type="submit">

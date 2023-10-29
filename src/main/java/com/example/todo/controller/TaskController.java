@@ -21,6 +21,11 @@ public class TaskController {
 
     private final TaskService taskService;
 
+    @ModelAttribute("priorities")
+    public Priority[] priorities() {
+        return Priority.values();
+    }
+
     @GetMapping("/tasks")
     public String taskList(Model model) {
 
