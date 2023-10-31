@@ -47,15 +47,15 @@ public class TaskController {
     }
 
     @PostMapping("/tasks/new")
-    public String addTask(@Valid TaskForm form, BindingResult result) {
+    public String addTask(@Valid TaskForm form, BindingResult result, RedirectAttributes redirectAttributes) {
 
         if (result.hasErrors()) {
             return "task/addTaskForm";
         }
 
-        System.out.println(form.getPriority());
-
         taskService.add(form.getName(), form.getPriority());
+        redirectAttributes.addAttribute("status", true);
+
         return "redirect:/tasks";
 
     }
