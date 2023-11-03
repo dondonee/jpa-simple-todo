@@ -4,31 +4,32 @@
 <body>
 <div>
     <header>
-        <h1>
+        <h1 th:text="#{page.addTask}">
             할 일 등록
         </h1>
     </header>
 
     <section>
         <form action="/tasks/new" th:object="${taskForm}" method="post">
-            <p><label th:for="name">제목</label></p>
-            <input type="text" th:field="*{name}" placeholder="Java 공부하기(24자까지)">
+            <p><label th:for="name" th:text="#{label.title}">제목</label></p>
+            <input type="text" th:field="*{name}" th:placeholder="#{label.title.placeholder}"
+                   placeholder="Java 공부하기(24자까지)">
             <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect data</p>
-            <p>우선순위</p>
+            <p th:text="#{label.priority}">우선순위</p>
             <th:block th:each="pr : ${priorities}">
                 <input type="radio" th:field="*{priority}" th:value="${pr.name()}">
-                <label th:for="${#ids.prev('priority')}" th:text="${pr.getDescription()}"></label>
+                <label th:for="${#ids.prev('priority')}" th:text="#{${pr.getDescription()}}"></label>
             </th:block>
             <p th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">Incorrect data</p>
             <div>
-                <button type="submit">
+                <button type="submit" th:text="#{button.submit}">
                     제출
                 </button>
-                <button type="reset">
+                <button type="reset" th:text="#{button.reset}">
                     내용지우기
                 </button>
                 <a href="/tasks">
-                    [ &leftarrow; 이전 ]
+                    [ &leftarrow; <span th:text="#{button.prev}">이전</span> ]
                 </a>
             </div>
         </form>

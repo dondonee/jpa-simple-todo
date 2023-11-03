@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.todo.message.MessageSourceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-03T08:00:26" hostname="myMac" time="0.068">
+  <properties/>
+  <testcase name="enLang()" classname="com.example.todo.message.MessageSourceTest" time="0.068"/>
+  <system-out><![CDATA[17:00:24.910 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+17:00:24.914 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+17:00:24.927 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.todo.message.MessageSourceTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+17:00:24.931 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.todo.message.MessageSourceTest], using SpringBootContextLoader
+17:00:24.933 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.todo.message.MessageSourceTest]: class path resource [com/example/todo/message/MessageSourceTest-context.xml] does not exist
+17:00:24.933 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.todo.message.MessageSourceTest]: class path resource [com/example/todo/message/MessageSourceTestContext.groovy] does not exist
+17:00:24.933 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.todo.message.MessageSourceTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+17:00:24.933 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.todo.message.MessageSourceTest]: MessageSourceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:00:24.949 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.todo.message.MessageSourceTest]
+17:00:24.974 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/hwangdoyun/MainFolder/study/todo/build/classes/java/main/com/example/todo/TodoApplication.class]
+17:00:24.974 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.todo.TodoApplication for test class com.example.todo.message.MessageSourceTest
+17:00:25.010 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.todo.message.MessageSourceTest]: using defaults.
+17:00:25.010 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+17:00:25.017 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6b5f8707, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@772485dd, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5a12c728, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@79ab3a71, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6e5bfdfc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3d829787, org.springframework.test.context.transaction.TransactionalTestExecutionListener@71652c98, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@51bde877, org.springframework.test.context.event.EventPublishingTestExecutionListener@60b85ba1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@492fc69e, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@117632cf, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2fb68ec6, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@d71adc2, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@3add81c4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1a1d3c1a]
+17:00:25.019 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@126be319 testClass = MessageSourceTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6c44052e testClass = MessageSourceTest, locations = '{}', classes = '{class com.example.todo.TodoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@630cb4a4, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@2b43529a, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@c260bdc, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3f363cf5, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@275fe372, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@cd1e646], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.16)
+
+2023-11-03 17:00:25.170  INFO 9322 --- [    Test worker] c.e.todo.message.MessageSourceTest       : Starting MessageSourceTest using Java 11.0.20.1 on myMac with PID 9322 (started by hwangdoyun in /Users/hwangdoyun/MainFolder/study/todo)
+2023-11-03 17:00:25.170  INFO 9322 --- [    Test worker] c.e.todo.message.MessageSourceTest       : No active profile set, falling back to 1 default profile: "default"
+2023-11-03 17:00:25.434  INFO 9322 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-03 17:00:25.440  INFO 9322 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2023-11-03 17:00:25.752  INFO 9322 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-03 17:00:25.778  INFO 9322 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-11-03 17:00:25.874  INFO 9322 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-03 17:00:25.917  INFO 9322 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-03 17:00:26.007  INFO 9322 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-03 17:00:26.022  INFO 9322 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Hibernate: 
+    
+    drop table if exists task CASCADE 
+2023-11-03 17:00:26.263  INFO 9322 --- [    Test worker] p6spy                                    : #1698998426263 | took 0ms | statement | connection 1| url jdbc:h2:mem:test
+
+    drop table if exists task CASCADE 
+
+    drop table if exists task CASCADE ;
+Hibernate: 
+    
+    drop sequence if exists hibernate_sequence
+2023-11-03 17:00:26.263  INFO 9322 --- [    Test worker] p6spy                                    : #1698998426263 | took 0ms | statement | connection 1| url jdbc:h2:mem:test
+
+    drop sequence if exists hibernate_sequence
+
+    drop sequence if exists hibernate_sequence;
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+2023-11-03 17:00:26.265  INFO 9322 --- [    Test worker] p6spy                                    : #1698998426265 | took 0ms | statement | connection 2| url jdbc:h2:mem:test
+create sequence hibernate_sequence start with 1 increment by 1
+create sequence hibernate_sequence start with 1 increment by 1;
+Hibernate: 
+    
+    create table task (
+       task_id bigint not null,
+        name varchar(255),
+        priority varchar(255),
+        reg_date timestamp,
+        status varchar(255),
+        primary key (task_id)
+    )
+2023-11-03 17:00:26.268  INFO 9322 --- [    Test worker] p6spy                                    : #1698998426268 | took 1ms | statement | connection 2| url jdbc:h2:mem:test
+
+    create table task (
+       task_id bigint not null,
+        name varchar(255),
+        priority varchar(255),
+        reg_date timestamp,
+        status varchar(255),
+        primary key (task_id)
+    )
+
+    create table task (
+       task_id bigint not null,
+        name varchar(255),
+        priority varchar(255),
+        reg_date timestamp,
+        status varchar(255),
+        primary key (task_id)
+    );
+Hibernate: 
+    
+    alter table task 
+       add constraint UK_lerptdo9d67pejjpbfau899tm unique (name)
+2023-11-03 17:00:26.269  INFO 9322 --- [    Test worker] p6spy                                    : #1698998426269 | took 0ms | statement | connection 2| url jdbc:h2:mem:test
+
+    alter table task 
+       add constraint UK_lerptdo9d67pejjpbfau899tm unique (name)
+
+    alter table task 
+       add constraint UK_lerptdo9d67pejjpbfau899tm unique (name);
+2023-11-03 17:00:26.270  INFO 9322 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-03 17:00:26.274  INFO 9322 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-03 17:00:26.378  WARN 9322 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-03 17:00:26.479  INFO 9322 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2023-11-03 17:00:26.623  INFO 9322 --- [    Test worker] c.e.todo.message.MessageSourceTest       : Started MessageSourceTest in 1.581 seconds (JVM running for 2.064)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

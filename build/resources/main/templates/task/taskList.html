@@ -4,10 +4,10 @@
 <body>
 <div>
     <header>
-        <h1>
-            Todo List
+        <h1 th:text="#{page.tasks}">
+            나의 할 일
         </h1>
-        <a href="/tasks/new">
+        <a href="/tasks/new" th:text="#{button.addTask}">
             새로운 TODO 등록
         </a>
     </header>
@@ -21,11 +21,11 @@
                 <li th:each="task : ${todos}">
                     <h3 th:text="${task.name}"></h3>
                     <p>
-                        등록날짜 : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
-                        우선순위 : <span th:text="${task.priority.getDescription()}"></span>
+                        <span th:text="#{label.regDate}">등록날짜</span> : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
+                        <span th:text="#{label.priority}">우선순위</span> : <span th:text="#{${task.priority.getDescription()}}"></span>
                     </p>
                     <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
-                        [ Edit ]
+                        [ <span th:text="#{button.edit}">수정</span> ]
                     </a>
                     <a th:href="@{/tasks/{id}/update (id=${task.id})}" role="button">
                         [ &rightarrow; ]
@@ -41,11 +41,11 @@
                 <li th:each="task : ${doings}">
                     <h3 th:text="${task.name}"></h3>
                     <p>
-                        등록날짜 : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
-                        우선순위 : <span th:text="${task.priority.getDescription()}"></span>
+                        <span th:text="#{label.regDate}">등록날짜</span> : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
+                        <span th:text="#{label.priority}">우선순위</span> : <span th:text="#{${task.priority.getDescription()}}"></span>
                     </p>
                     <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
-                        [ Edit ]
+                        [ <span th:text="#{button.edit}">수정</span> ]
                     </a>
                     <a th:href="@{/tasks/{id}/update (id=${task.id})}" role="button">
                         [ &rightarrow; ]
@@ -61,11 +61,11 @@
                 <li th:each="task : ${dones}">
                     <h3 th:text="${task.name}"></h3>
                     <p>
-                        등록날짜 : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
-                        우선순위 : <span th:text="${task.priority.getDescription()}"></span>
+                        <span th:text="#{label.regDate}">등록날짜</span> : <span th:text="${#temporals.format(task.regDate, 'yyyy-MM-dd')}"></span>,
+                        <span th:text="#{label.priority}">우선순위</span> : <span th:text="#{${task.priority.getDescription()}}"></span>
                     </p>
                     <a th:href="@{/tasks/{id}/edit (id=${task.id})}" role="button">
-                        [ Edit ]
+                        [ <span th:text="#{button.edit}">수정</span> ]
                     </a>
                     <a th:href="@{/tasks/{id}/delete (id=${task.id})}" role="button">
                         [ X ]

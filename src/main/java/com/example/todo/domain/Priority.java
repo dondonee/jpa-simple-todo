@@ -1,7 +1,7 @@
 package com.example.todo.domain;
 
 public enum Priority {
-    HIGH("높음"), MEDIUM("보통"), LOW("낮음");
+    HIGH("label.priority.HIGH"), MEDIUM("label.priority.MEDIUM"), LOW("label.priority.LOW");
 
     private final String description;
 
