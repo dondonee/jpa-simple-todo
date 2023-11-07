@@ -19,7 +19,7 @@ public class Task {
 
     private LocalDateTime regDate;
 
-    @Column(unique = true)
+    @Column(unique = true, length = 24)
     private String name;
 
     @Enumerated(EnumType.STRING)

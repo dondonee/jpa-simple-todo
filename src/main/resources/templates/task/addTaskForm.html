@@ -12,15 +12,15 @@
     <section>
         <form action="/tasks/new" th:object="${taskForm}" method="post">
             <p><label th:for="name" th:text="#{label.title}">제목</label></p>
-            <input type="text" th:field="*{name}" th:placeholder="#{label.title.placeholder}"
+            <input type="text" th:field="*{name}"  th:errorclass="field-error" th:placeholder="#{label.title.placeholder}"
                    placeholder="Java 공부하기(24자까지)">
-            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Incorrect data</p>
+            <p th:errors="*{name}" th:class="field-error-text" th:errorclass="field-error">Incorrect data</p>
             <p th:text="#{label.priority}">우선순위</p>
             <th:block th:each="pr : ${priorities}">
-                <input type="radio" th:field="*{priority}" th:value="${pr.name()}">
+                <input type="radio" th:field="*{priority}" th:value="${pr.name()}" th:errorclass="field-error">
                 <label th:for="${#ids.prev('priority')}" th:text="#{${pr.getDescription()}}"></label>
             </th:block>
-            <p th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}">Incorrect data</p>
+            <p th:errors="*{priority}" th:class="field-error-text" th:errorclass="field-error">Incorrect data</p>
             <div>
                 <button type="submit" th:text="#{button.submit}">
                     제출

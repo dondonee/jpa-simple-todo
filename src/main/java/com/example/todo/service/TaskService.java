@@ -20,7 +20,11 @@ public class TaskService {
 
     @Transactional
     public Long add(String name, Priority priority) {
-        checkDuplicateTaskName(name);
+
+        if (checkDuplicateTaskName(name)) {
+            throw new IllegalStateException("동일한 이름의 할 일이 이미 존재합니다.");
+        }
+
         Task task = Task.createTask(name, priority);
         taskRepository.save(task);
         return task.getId();
@@ -70,12 +74,12 @@ public class TaskService {
         task.setPriority(priority);
     }
 
-    private void checkDuplicateTaskName(String name) {
-        List<Task> findTasks = taskRepository.findByName(name);
+    public boolean checkDuplicateTaskName(String name) {
 
-        if (!findTasks.isEmpty()) {
-            throw new IllegalStateException("동일한 이름의 할 일이 이미 존재합니다.");
+        if (taskRepository.findByName(name).isEmpty()) {
+            return false;
         }
+        return true;
     }
 
 }
