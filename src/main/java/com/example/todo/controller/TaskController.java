@@ -25,12 +25,6 @@ import java.util.List;
 public class TaskController {
 
     private final TaskService taskService;
-    private final TaskValidator taskValidator;
-
-    @InitBinder
-    public void init(WebDataBinder dataBinder) {
-        dataBinder.addValidators(taskValidator);
-    }
 
     @ModelAttribute("priorities")
     public Priority[] priorities() {
@@ -60,8 +54,12 @@ public class TaskController {
     @PostMapping("/tasks/new")
     public String addTask(@Validated TaskForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
+        //중복 제목 검증
+        checkDuplicateTaskName(form, bindingResult);
+
         //검증 에러가 있는 경우
         if (bindingResult.hasErrors()) {
+            log.info("bindingResult = {}" + bindingResult);
             return "task/addTaskForm";
         }
 
@@ -86,10 +84,13 @@ public class TaskController {
     }
 
     @PostMapping("/tasks/{taskId}/edit")
-    public String editTask(@PathVariable Long taskId, @Valid TaskForm form,
-                           BindingResult result) {
+    public String editTask(@PathVariable Long taskId, @Validated TaskForm form,
+                           BindingResult bindingResult) {
 
-        if (result.hasErrors()) {
+        //중복 제목 검증
+        checkDuplicateTaskName(form, bindingResult);
+
+        if (bindingResult.hasErrors()) {
             Task findTask = taskService.findOne(taskId);
             form.setName(findTask.getName());
             form.setPriority(findTask.getPriority());
@@ -115,4 +116,9 @@ public class TaskController {
         return "redirect:/tasks";
     }
 
+    private void checkDuplicateTaskName(TaskForm form, BindingResult bindingResult) {
+        if (taskService.checkDuplicateTaskName(form.getName())) {
+            bindingResult.rejectValue("name", "unique");
+        }
+    }
 }

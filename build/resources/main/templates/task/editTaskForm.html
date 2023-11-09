@@ -12,14 +12,14 @@
     <section>
         <form th:object="${taskForm}" method="post">
             <p><label th:for="name" th:text="#{label.title}">제목</label></p>
-            <input type="text" th:field="*{name}" th:placeholder="${taskForm.name}">
-            <p th:errors="*{name}">Incorrect data</p>
+            <input type="text" th:field="*{name}" th:errorclass="field-error" th:placeholder="${taskForm.name}">
+            <p th:errors="*{name}" th:class="field-error-text" th:errorclass="field-error">Incorrect data</p>
             <p th:text="#{label.priority}">우선순위</p>
             <th:block th:each="pr : ${priorities}">
                 <input type="radio" th:field="*{priority}" th:value="${pr.name()}">
                 <label th:for="${#ids.prev('priority')}" th:text="#{${pr.getDescription()}}"></label>
             </th:block>
-            <p th:errors="*{priority}">Incorrect data</p>
+            <p th:errors="*{priority}" th:class="field-error-text" th:errorclass="field-error">Incorrect data</p>
             <div>
                 <button type="submit" th:text="#{button.submit}">
                     제출
